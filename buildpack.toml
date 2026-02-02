@@ -1,13 +1,14 @@
 api = "0.7"
 
 [buildpack]
-  homepage = "https://github.com/paketo-buildpacks/npm-start"
-  id = "paketo-buildpacks/npm-start"
-  name = "Paketo Buildpack for NPM Start"
+  homepage = "https://github.com/goodrain/pnpm-start"
+  id = "goodrain/pnpm-start"
+  name = "Rainbond Buildpack for PNPM Start"
+  version = "0.1.0"
 
   [[buildpack.licenses]]
     type = "Apache-2.0"
-    uri = "https://github.com/paketo-buildpacks/npm-start/blob/main/LICENSE"
+    uri = "https://github.com/goodrain/pnpm-start/blob/main/LICENSE"
 
 [metadata]
   include-files = [
@@ -23,9 +24,9 @@ api = "0.7"
   pre-package = "./scripts/build.sh --target linux/amd64 --target linux/arm64"
 
   [[metadata.configurations]]
-    name = "BP_NPM_START_SCRIPT"
+    name = "BP_PNPM_START_SCRIPT"
     default = "start"
-    description = "configures the npm script to be started"
+    description = "configures the pnpm script to be started"
 
 [[stacks]]
   id = "*"

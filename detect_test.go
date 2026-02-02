@@ -1,4 +1,4 @@
-package npmstart_test
+package pnpmstart_test
 
 import (
 	"errors"
@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	npmstart "github.com/paketo-buildpacks/npm-start"
-	"github.com/paketo-buildpacks/npm-start/fakes"
+	pnpmstart "github.com/goodrain/pnpm-start"
+	"github.com/goodrain/pnpm-start/fakes"
 	"github.com/paketo-buildpacks/packit/v2"
 	"github.com/sclevine/spec"
 
@@ -32,7 +32,7 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 
 		reloader = &fakes.Reloader{}
 
-		detect = npmstart.Detect(reloader)
+		detect = pnpmstart.Detect(reloader)
 	})
 
 	context("when there is a package.json with a start script", func() {
@@ -133,7 +133,7 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 			_, err := detect(packit.DetectContext{
 				WorkingDir: workingDir,
 			})
-			Expect(err).To(MatchError(ContainSubstring(npmstart.NoStartScriptError)))
+			Expect(err).To(MatchError(ContainSubstring(pnpmstart.NoStartScriptError)))
 		})
 	})
 

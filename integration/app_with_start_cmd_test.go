@@ -131,7 +131,7 @@ func testAppWithStartCmd(t *testing.T, context spec.G, it spec.S) {
 					settings.Buildpacks.NPMInstall.Online,
 					settings.Buildpacks.NPMStart.Online,
 				).
-				WithEnv(map[string]string{"BP_NPM_START_SCRIPT": "start:dev"}).
+				WithEnv(map[string]string{"BP_PNPM_START_SCRIPT": "start:dev"}).
 				WithPullPolicy(pullPolicy).
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())
@@ -181,7 +181,7 @@ func testAppWithStartCmd(t *testing.T, context spec.G, it spec.S) {
 					settings.Buildpacks.NPMInstall.Online,
 					settings.Buildpacks.NPMStart.Online,
 				).
-				WithEnv(map[string]string{"BP_NPM_START_SCRIPT": "start:arg"}).
+				WithEnv(map[string]string{"BP_PNPM_START_SCRIPT": "start:arg"}).
 				WithPullPolicy(pullPolicy).
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())

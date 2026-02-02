@@ -1,4 +1,4 @@
-package npmstart
+package pnpmstart
 
 import (
 	"fmt"
@@ -85,7 +85,7 @@ func Build(logger scribe.Emitter, reloader Reloader) packit.BuildFunc {
 				WatchPaths: []string{projectPath},
 				IgnorePaths: []string{
 					filepath.Join(projectPath, "package.json"),
-					filepath.Join(projectPath, "package-lock.json"),
+					filepath.Join(projectPath, "pnpm-lock.yaml"),
 					filepath.Join(projectPath, "node_modules"),
 				},
 			})

@@ -1,4 +1,4 @@
-package npmstart_test
+package pnpmstart_test
 
 import (
 	"bytes"
@@ -9,9 +9,9 @@ import (
 	"testing"
 
 	"github.com/paketo-buildpacks/libreload-packit"
-	npmstart "github.com/paketo-buildpacks/npm-start"
-	"github.com/paketo-buildpacks/npm-start/fakes"
-	"github.com/paketo-buildpacks/npm-start/matchers"
+	pnpmstart "github.com/goodrain/pnpm-start"
+	"github.com/goodrain/pnpm-start/fakes"
+	"github.com/goodrain/pnpm-start/matchers"
 	"github.com/paketo-buildpacks/packit/v2"
 	"github.com/paketo-buildpacks/packit/v2/scribe"
 	"github.com/sclevine/spec"
@@ -73,7 +73,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			Layers: packit.Layers{Path: layersDir},
 		}
 
-		build = npmstart.Build(logger, reloader)
+		build = pnpmstart.Build(logger, reloader)
 	})
 
 	it("returns a result that builds correctly", func() {
@@ -257,10 +257,10 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 		context("when BP_NMP_START_SCRIPT is used", func() {
 			it.Before(func() {
-				t.Setenv("BP_NPM_START_SCRIPT", "random-script")
+				t.Setenv("BP_PNPM_START_SCRIPT", "random-script")
 			})
 
-			it("returns a result with a valid start command when BP_NPM_START_SCRIPT is used", func() {
+			it("returns a result with a valid start command when BP_PNPM_START_SCRIPT is used", func() {
 				result, err := build(buildContext)
 				Expect(err).NotTo(HaveOccurred())
 

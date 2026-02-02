@@ -1,4 +1,4 @@
-module github.com/paketo-buildpacks/npm-start
+module github.com/goodrain/pnpm-start
 
 go 1.25.5
 

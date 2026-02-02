@@ -1,4 +1,4 @@
-package npmstart
+package pnpmstart
 
 import (
 	"fmt"
@@ -37,12 +37,6 @@ func Detect(reloader Reloader) packit.DetectFunc {
 		requirements := []packit.BuildPlanRequirement{
 			{
 				Name: Node,
-				Metadata: map[string]interface{}{
-					"launch": true,
-				},
-			},
-			{
-				Name: Npm,
 				Metadata: map[string]interface{}{
 					"launch": true,
 				},
