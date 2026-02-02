@@ -4,7 +4,7 @@ api = "0.7"
   homepage = "https://github.com/goodrain/pnpm-start"
   id = "goodrain/pnpm-start"
   name = "Rainbond Buildpack for PNPM Start"
-  version = "0.1.0"
+  version = "2.4.3"
 
   [[buildpack.licenses]]
     type = "Apache-2.0"
