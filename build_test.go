@@ -255,12 +255,12 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			Expect(startScript).To(matchers.BeAFileWithSubstring("some-prestart-command && some-start-command $@ && some-poststart-command"))
 		})
 
-		context("when BP_NMP_START_SCRIPT is used", func() {
+		context("when BP_NPM_START_SCRIPT is used", func() {
 			it.Before(func() {
-				t.Setenv("BP_PNPM_START_SCRIPT", "random-script")
+				t.Setenv("BP_NPM_START_SCRIPT", "random-script")
 			})
 
-			it("returns a result with a valid start command when BP_PNPM_START_SCRIPT is used", func() {
+			it("returns a result with a valid start command when BP_NPM_START_SCRIPT is used", func() {
 				result, err := build(buildContext)
 				Expect(err).NotTo(HaveOccurred())
 

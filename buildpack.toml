@@ -24,7 +24,7 @@ api = "0.7"
   pre-package = "./scripts/build.sh --target linux/amd64 --target linux/arm64"
 
   [[metadata.configurations]]
-    name = "BP_PNPM_START_SCRIPT"
+    name = "BP_NPM_START_SCRIPT"
     default = "start"
     description = "configures the pnpm script to be started"
 
