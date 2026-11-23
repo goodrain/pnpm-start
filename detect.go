@@ -1,4 +1,4 @@
-package npmstart
+package pnpmstart
 
 import (
 	"fmt"
@@ -51,13 +51,6 @@ func Detect(reloader Reloader) packit.DetectFunc {
 		if shouldLaunchWithTini {
 			requirements = append(requirements, packit.BuildPlanRequirement{
 				Name: Tini,
-				Metadata: map[string]interface{}{
-					"launch": true,
-				},
-			})
-		} else {
-			requirements = append(requirements, packit.BuildPlanRequirement{
-				Name: Npm,
 				Metadata: map[string]interface{}{
 					"launch": true,
 				},

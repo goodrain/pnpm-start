@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/paketo-buildpacks/libreload-packit/watchexec"
-	npmstart "github.com/paketo-buildpacks/npm-start"
+	pnpmstart "github.com/goodrain/pnpm-start"
 	"github.com/paketo-buildpacks/packit/v2"
 	"github.com/paketo-buildpacks/packit/v2/scribe"
 )
@@ -15,8 +15,8 @@ func main() {
 	reloader := watchexec.NewWatchexecReloader()
 
 	packit.Run(
-		npmstart.Detect(reloader),
-		npmstart.Build(
+		pnpmstart.Detect(reloader),
+		pnpmstart.Build(
 			logger,
 			reloader,
 		),

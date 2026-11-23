@@ -1,10 +1,10 @@
-package npmstart
+package pnpmstart
 
 const (
 	Node        = "node"
 	NodeModules = "node_modules"
-	Npm         = "npm"
 	Tini        = "tini"
+	Pnpm        = "pnpm"
 )
 
 const StartupScript = `trap 'kill -TERM $CPID' TERM

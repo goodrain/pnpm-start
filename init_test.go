@@ -1,4 +1,4 @@
-package npmstart_test
+package pnpmstart_test
 
 import (
 	"testing"
